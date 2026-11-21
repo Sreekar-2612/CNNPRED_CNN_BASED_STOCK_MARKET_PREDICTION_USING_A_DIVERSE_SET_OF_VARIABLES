@@ -1,0 +1,9 @@
+Feature,ADF_Statistic,p_value,Used_Lag,N_Obs,Critical_1%,Critical_5%,Is_Stationary_5%
+return_idx,-9.4345,0.0,25,1758,-3.4341,-2.8632,True
+dist_EMA50,-6.6261,0.0,5,1778,-3.434,-2.8632,True
+volatility_20,-3.264,0.016568,23,1760,-3.4341,-2.8632,True
+term_spread,-1.5014,0.532811,0,1783,-3.434,-2.8632,False
+delta_term_spread,-17.5732,0.0,6,1777,-3.434,-2.8632,True
+credit_spread,-1.4079,0.578478,9,1774,-3.434,-2.8632,False
+delta_credit_spread,-11.5693,0.0,8,1775,-3.434,-2.8632,True
+Volume,-32.0006,0.0,2,1781,-3.434,-2.8632,True

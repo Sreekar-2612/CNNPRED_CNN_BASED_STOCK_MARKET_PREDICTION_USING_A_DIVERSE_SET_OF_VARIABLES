@@ -1,0 +1,4 @@
+Algorithm,MFS_Count,Is_Antichain,Matches_Ground_Truth
+Pincer_Search,444,True,True
+mlxtend_fpmax,444,True,True
+fpgrowth_maximal_filter,444,True,True

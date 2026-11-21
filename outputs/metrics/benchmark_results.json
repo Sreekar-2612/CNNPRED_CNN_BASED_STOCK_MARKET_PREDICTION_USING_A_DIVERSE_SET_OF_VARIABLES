@@ -1,0 +1,127 @@
+{
+  "strong_scaling": {
+    "cores": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "speedups": [
+      1.0,
+      0.9799,
+      0.8959,
+      1.035
+    ],
+    "efficiencies": [
+      1.0,
+      0.49,
+      0.224,
+      0.1294
+    ],
+    "parallel_fraction": 0.0,
+    "amdahl_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "timing_by_core": {
+      "1": {
+        "warmup_sec": 16.7292,
+        "steady_fit_mean_sec": 26.9943,
+        "steady_fit_std_sec": 0.8143,
+        "peak_rss_mb": 2110.69
+      },
+      "2": {
+        "warmup_sec": 24.7707,
+        "steady_fit_mean_sec": 27.5474,
+        "steady_fit_std_sec": 4.1177,
+        "peak_rss_mb": 2892.72
+      },
+      "4": {
+        "warmup_sec": 20.7737,
+        "steady_fit_mean_sec": 30.1324,
+        "steady_fit_std_sec": 5.9729,
+        "peak_rss_mb": 2685.86
+      },
+      "8": {
+        "warmup_sec": 30.9438,
+        "steady_fit_mean_sec": 26.0816,
+        "steady_fit_std_sec": 3.0722,
+        "peak_rss_mb": 2580.31
+      }
+    },
+    "workload_rows": 200000
+  },
+  "synthetic_scaling": {
+    "synthetic_scaling": [
+      {
+        "N_Rows": 1784,
+        "Distinct_Transactions": 1688,
+        "Local_Prep_Sec": 0.0126,
+        "Local_mlxtend_Sec": 0.1608,
+        "Local_Peak_RSS_MB": 1885.76,
+        "Local_Itemsets": 1017,
+        "Spark_Prep_Sec": 17.8281,
+        "Spark_FPGrowth_Sec": 0.6834,
+        "Spark_Peak_RSS_MB_ProcessTree": 1632.45,
+        "Spark_Itemsets": 1017,
+        "Speedup_Local_over_Spark": 0.235
+      },
+      {
+        "N_Rows": 10000,
+        "Distinct_Transactions": 8008,
+        "Local_Prep_Sec": 0.0239,
+        "Local_mlxtend_Sec": 0.8671,
+        "Local_Peak_RSS_MB": 1042.85,
+        "Local_Itemsets": 1027,
+        "Spark_Prep_Sec": 17.4706,
+        "Spark_FPGrowth_Sec": 2.3601,
+        "Spark_Peak_RSS_MB_ProcessTree": 1176.89,
+        "Spark_Itemsets": 1027,
+        "Speedup_Local_over_Spark": 0.367
+      },
+      {
+        "N_Rows": 50000,
+        "Distinct_Transactions": 31098,
+        "Local_Prep_Sec": 0.1515,
+        "Local_mlxtend_Sec": 5.7764,
+        "Local_Peak_RSS_MB": 1265.42,
+        "Local_Itemsets": 1027,
+        "Spark_Prep_Sec": 18.3725,
+        "Spark_FPGrowth_Sec": 5.2523,
+        "Spark_Peak_RSS_MB_ProcessTree": 2148.98,
+        "Spark_Itemsets": 1027,
+        "Speedup_Local_over_Spark": 1.1
+      },
+      {
+        "N_Rows": 100000,
+        "Distinct_Transactions": 53585,
+        "Local_Prep_Sec": 0.1032,
+        "Local_mlxtend_Sec": 2.4472,
+        "Local_Peak_RSS_MB": 1808.34,
+        "Local_Itemsets": 1026,
+        "Spark_Prep_Sec": 16.6383,
+        "Spark_FPGrowth_Sec": 8.6198,
+        "Spark_Peak_RSS_MB_ProcessTree": 2796.83,
+        "Spark_Itemsets": 1026,
+        "Speedup_Local_over_Spark": 0.284
+      },
+      {
+        "N_Rows": 250000,
+        "Distinct_Transactions": 104163,
+        "Local_Prep_Sec": 0.4269,
+        "Local_mlxtend_Sec": 7.9539,
+        "Local_Peak_RSS_MB": 1950.98,
+        "Local_Itemsets": 1022,
+        "Spark_Prep_Sec": 17.8325,
+        "Spark_FPGrowth_Sec": 15.8564,
+        "Spark_Peak_RSS_MB_ProcessTree": 3468.05,
+        "Spark_Itemsets": 1022,
+        "Speedup_Local_over_Spark": 0.502
+      }
+    ],
+    "spark_startup_sec": 0.207,
+    "cpu_count": 12
+  }
+}

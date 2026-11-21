@@ -1,0 +1,2 @@
+Index,Total_Labeled_Rows,Test_Rows,Test_NextDay_Up,Test_NextDay_NotUp,Test_Up_Ratio,Expected_Majority_Baseline
+S&P,1783,357,198,159,0.554622,55.46%

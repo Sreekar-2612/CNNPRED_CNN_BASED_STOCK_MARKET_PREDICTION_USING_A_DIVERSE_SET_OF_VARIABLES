@@ -1,0 +1,2 @@
+Index,Test_Observations,Identical_Predictions,Parity_Agreement_Pct,Parity_Requirement_Met,Spark_Accuracy,Spark_F1
+S&P,357,357,100.0,True,0.5014,0.4422

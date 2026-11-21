@@ -1,0 +1,123 @@
+# ==============================================================================
+# GITIGNORE — Analytics and Systems of Big Data Practice Hackathon
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. DATASETS & RAW FILES (EXCLUDED PER SPECIFICATION)
+# ------------------------------------------------------------------------------
+# UCI raw download directory
+cnnpred+cnn+based+stock+market+prediction+using+a+diverse+set+of+variables/
+
+# Project data directory contents
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+
+# Large binary / serialized data formats
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+# ------------------------------------------------------------------------------
+# 2. SENSITIVE FILES & CREDENTIALS
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+credentials*
+secrets*
+id_rsa*
+id_ed25519*
+*.p12
+*.pfx
+
+# ------------------------------------------------------------------------------
+# 3. PYTHON CACHES & BUILD ARTIFACTS
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ------------------------------------------------------------------------------
+# 4. TESTING & CODE QUALITY CACHES
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+
+# ------------------------------------------------------------------------------
+# 5. JUPYTER NOTEBOOK CHECKPOINTS
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ------------------------------------------------------------------------------
+# 6. IDES & EDITORS
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------------------------------------------------------
+# 7. OPERATING SYSTEM ARTIFACTS
+# ------------------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# ------------------------------------------------------------------------------
+# 8. BIG DATA & DISTRIBUTED SYSTEMS (SPARK / DERBY)
+# ------------------------------------------------------------------------------
+metastore_db/
+derby.log
+spark-warehouse/
+checkpoint/
+checkpoints/
+*.sparkStaging/
