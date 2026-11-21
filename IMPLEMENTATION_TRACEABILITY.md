@@ -29,4 +29,21 @@
 | **REQ-22** | PySpark `NaiveBayes(modelType="gaussian")` $\ge 99.5\%$ parity | `pyspark_pipeline.py`| `test_pyspark.py::test_spark_naive_bayes_parity` | `09_pyspark_implementation.ipynb` | `outputs/tables/table_17_spark_parity_*.csv` | **PASSED** |
 | **REQ-23** | PySpark `FPGrowth` execution & single-consequent comparison | `pyspark_pipeline.py`| `test_pyspark.py::test_spark_fp_growth_equivalence` | `09_pyspark_implementation.ipynb` | `outputs/tables/table_18_spark_rules_*.csv` | **PASSED** |
 | **REQ-24** | Benchmarking: phase-separated timing & process-tree peak RSS | `benchmark_engine.py`| `test_benchmark.py::test_benchmarking_engine_rss` | `10_big_data_benchmarking.ipynb` | `outputs/metrics/benchmark_results.json` | **PASSED** |
-| **REQ-25** | ReportLab 18-chapter academic PDF report compilation ($> 2$ MB, actual 4.93 MB) | `generate_pdf_report.py` | `test_report.py::test_academic_pdf_report_exists` | `11_final_results_and_conclusions.ipynb` | `reports/Analytics_BigData_Endsem_Report.pdf` | **PASSED** |
+| **REQ-25** | ReportLab 20-chapter, 36-page academic PDF report | `generate_pdf_report.py` | `test_report.py::test_academic_pdf_report_exists` | `11_final_results_and_conclusions.ipynb` | `reports/Analytics_BigData_Endsem_Report.pdf` | **PASSED** |
+
+
+## Final verification status (2026-11-21)
+
+| Exam requirement | Status |
+|---|---|
+| Descriptive analytics + cleaning/selection/transformation | Done (sentinel handling corrected) |
+| ≥10 unique plots with inferences | Done: 14 figures + 5 diagrams, inference per figure in report |
+| FP-Growth association rules | Done; contemporaneous + predictive (train/test) |
+| Naive Bayes / DBSCAN | Both done; NB not significantly better than baseline |
+| Pincer Search MFIs | Done; verified vs fpmax, FP-Growth and brute force |
+| Rules, performance measures, dendrograms | Done |
+| Two techniques on PySpark | Done; exact parity (NB 357/357, FP-Growth identical) |
+| Establish PySpark performance enhancement | Measured: **no speed-up on a single machine** at these sizes — reported honestly, not marked as achieved |
+| PDF report + source | Done |
+
+Tests: 95 passed, 0 failed. Details: `VERIFICATION_REPORT.md`.

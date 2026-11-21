@@ -1,4 +1,5 @@
 # Analytics and Systems of Big Data Practice — Endsem Practical Hackathon
+> **Final verification (2026-11-21):** see `VERIFICATION_REPORT.md` for what was checked and corrected. Key results: Bernoulli NB 57.4% vs 55.5% majority baseline (not significant, McNemar p = 0.56); Pincer = fpmax = FP-Growth maximal (444 MFIs); Spark NB and FP-Growth exactly reproduce local results; Spark gave no speed-up on one machine.
 ## Comprehensive Implementation, PySpark MLlib, Bidirectional Pincer Search & Academic Submission
 
 **Institution:** Indian Institute of Information Technology, Design and Manufacturing (IIITDM) Kancheepuram  
@@ -23,12 +24,12 @@ This repository contains the complete, reproducible, and mathematically verified
 | **Test Majority Baseline** | Train majority class 1 (774/1,425 = 54.32%) applied to test (198/357) | Exactly **55.46%** ($0.554622$) | **PASS (Honest Baseline, Zero Leakage)** |
 | **Transaction Vocabulary** | 22 Contemporaneous + 2 Forward Tokens | Exactly 24 discrete items | **PASS (Strict 24 Tokens)** |
 | **FP-Growth Support Separation** | C1 Contemporaneous ($\lceil 0.08 \times 1784 \rceil = 143$) vs C2 Discovery ($\lceil 0.08 \times 1425 \rceil = 114$) | Denominators: 1,784 vs 1,425; out-of-sample test eval | **PASS (Strict Database Separation)** |
-| **Pincer Search Validation** | 279 Maximal Frequent Itemsets | Exact equivalence vs `fpmax` & `fpgrowth` | **PASS (100% Set Identity)** |
+| **Pincer Search Validation** | 444 Maximal Frequent Itemsets | Exact equivalence vs `fpmax` & `fpgrowth` | **PASS (100% Set Identity)** |
 | **PySpark MLlib NB Parity** | 357 / 357 Identical Predictions | $\ge 99.5\%$ agreement with Scikit-learn | **PASS (100.00% Parity)** |
 | **DBSCAN & t-SNE Manifold** | Optimal $\epsilon = 1.5018$ (9-NN Knee) + t-SNE Non-Linear Projection | PCA scree + t-SNE 2D manifold (`fig_09b`) | **PASS (REQ-20 & REQ-21 Verified)** |
-| **Benchmarking Isolation** | Process-tree RSS + Amdahl's Law | Amdahl parallel fraction $f = 0.6718$ | **PASS (RSS Tracked)** |
+| **Benchmarking Isolation** | Process-tree RSS + Amdahl's Law | Measured: no Spark speed-up on 1 machine (Amdahl f ≈ 0); see report Ch. 15 | **Measured honestly** |
 | **Academic Report Compilation** | 18 Chapters via ReportLab | File size $\ge 2.0$ MB | **PASS (4.93 MB, 18 Ch)** |
-| **Pytest Formal Test Suite** | 26 passed in 2.49s | All acceptance criteria validated | **PASS (100% Tests)** |
+| **Pytest Formal Test Suite** | 95 passed, 0 failed | All acceptance criteria validated | **PASS (100% Tests)** |
 
 ---
 
@@ -56,7 +57,7 @@ lab_hackathon/
 │   ├── clustering.py              # DBSCAN (knee locator), DBCV index, PCA & Ward HAC
 │   ├── pyspark_pipeline.py        # Distributed PySpark MLlib (Gaussian NB & FP-Growth)
 │   ├── benchmark_engine.py        # 5-phase isolated latency, psutil RSS & Amdahl scaling
-│   ├── generate_pdf_report.py     # 18-chapter academic ReportLab PDF compilation
+│   ├── generate_pdf_report.py     # 20-chapter academic ReportLab PDF (all numbers read from output tables)
 │   ├── run_pipeline.py            # Master analytical pipeline runner
 │   └── build_notebooks.py         # Automated builder and executor for all 11 notebooks
 │
@@ -79,7 +80,7 @@ lab_hackathon/
 │   ├── models/                    # Fitted model parameters
 │   └── metrics/                   # JSON benchmark results (Amdahl & RSS scaling)
 │
-├── tests/                         # Pytest test suite (10 modules, 26 unit tests)
+├── tests/                         # Pytest test suite (11 modules, 95 tests incl. first-principles correctness tests)
 │   ├── test_data_loader.py
 │   ├── test_preprocessing.py
 │   ├── test_feature_engineering.py
@@ -92,7 +93,7 @@ lab_hackathon/
 │   └── test_report.py
 │
 ├── reports/
-│   └── Analytics_BigData_Endsem_Report.pdf   # Final 18-chapter Academic Monograph (3.90 MB)
+│   └── Analytics_BigData_Endsem_Report.pdf   # Final 20-chapter, 36-page academic report
 │
 ├── PROJECT_SPECIFICATION_SUMMARY.md
 ├── IMPLEMENTATION_TRACEABILITY.md
@@ -156,7 +157,7 @@ python run_all.py
 | **REQ-22** | PySpark `NaiveBayes(modelType="gaussian")` $\ge 99.5\%$ parity | `pyspark_pipeline.py` / `test_pyspark.py` | **PASSED** |
 | **REQ-23** | PySpark `FPGrowth` execution & single-consequent comparison | `pyspark_pipeline.py` / `test_pyspark.py` | **PASSED** |
 | **REQ-24** | Benchmarking: phase-separated timing & process-tree peak RSS | `benchmark_engine.py` / `test_benchmark.py` | **PASSED** |
-| **REQ-25** | ReportLab 18-chapter academic PDF report compilation ($> 2$ MB) | `generate_pdf_report.py` / `test_report.py` | **PASSED** |
+| **REQ-25** | ReportLab 20-chapter academic PDF report | `generate_pdf_report.py` / `test_report.py` | **PASSED** |
 
 ---
 
